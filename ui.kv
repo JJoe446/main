@@ -1,0 +1,36 @@
+
+BoxLayout:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: ticket_input
+        hint_text: "กรอกโพย เช่น 59=50*50"
+        multiline: True
+        size_hint_y: 0.4
+
+    Button:
+        text: "➕ เพิ่มโพย"
+        size_hint_y: 0.1
+        on_press: app.add_ticket()
+
+    Button:
+        text: "🧮 วิเคราะห์เลขยอดนิยม"
+        size_hint_y: 0.1
+        on_press: app.analyze_top_numbers()
+
+    Button:
+        text: "🧾 สรุปโพยงวดนี้"
+        size_hint_y: 0.1
+        on_press: app.show_summary()
+
+    Button:
+        text: "🧹 ล้างโพย"
+        size_hint_y: 0.1
+        on_press: app.clear_tickets()
+
+    Label:
+        id: result_label
+        text: ""
+        size_hint_y: 0.3
